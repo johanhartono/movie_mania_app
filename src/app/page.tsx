@@ -1,8 +1,12 @@
+"use client"
+
+import Banner from "@/components/BannerSection/Banner/Banner";
+import MainContext from "@/context/MasterContext"
+
 export default function Home() {
   return (
-    <>
-    <h1>Hello World, world is very nice</h1>
-   </>
-
+    <MainContext>
+        <Banner/>
+    </MainContext>
   );
 }

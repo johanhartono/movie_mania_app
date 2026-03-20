@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-undef */
-import React, { useContext } from "react";
+//import React, { useContext } from "react";
 //import BannerSingle from "../BannerSingle/BannerSingle";
-import { MasterContext } from "@/context/MasterContext";
+//import { MasterContext } from "@/context/MasterContext";
 import Image from "next/image";
 const Banner = () => {
-  const { movies } = useContext(MasterContext)
-  console.log(movies)
+/*   const { movies } = useContext(MasterContext)
+  console.log(movies) */
   
   return (
     <>

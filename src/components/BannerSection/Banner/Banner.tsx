@@ -1,48 +1,22 @@
 /* eslint-disable react/jsx-no-undef */
-import React from "react";
-import Image from "next/image";
+import React, { useContext } from "react";
+import BannerSingle from "../BannerSingle/BannerSingle";
+import { MasterContext } from "@/context/MasterContext";
 
 const Banner = () => {
+  const { movies } = useContext(MasterContext)
+  console.log(movies)
+  
   return (
     <>
       <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
-          <Image
-            width={500}
-            height={100}
-            src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-            className="w-full"
-            alt=""
-          />
-        </div>
-        <div id="item2" className="carousel-item w-full">
-          <Image
-            width={500}
-            height={100}
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-            className="w-full"
-            alt=""
-          />
-        </div>
-        <div id="item3" className="carousel-item w-full">
-          <Image
-            width={500}
-            height={100}
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-            className="w-full"
-            alt=""
-          />
-        </div>
-        <div id="item4" className="carousel-item w-full">
-          <Image
-            width={500}
-            height={100}
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-            className="w-full"
-            alt=""
-          />
-        </div>
+        {movies.map((movie)=> {
+          return (
+            <BannerSingle movie={movie} key={movie.id}/>
+          )
+        })}
       </div>
+
       <div className="flex w-full justify-center gap-2 py-2">
         <a href="#item1" className="btn btn-xs">
           1
